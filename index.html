@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Under Construction — Konstantin®</title>
+
+  <!-- Font & icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <link rel="icon" type="image/svg+xml" href="../icon/favicon.svg" />
+  <link rel="mask-icon" href="../icon/favicon.svg" color="#4a90e2" />
+
+  <!-- OS UI colors -->
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#4a90e2" media="(prefers-color-scheme: light)" />
+
+
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <!-- Theme toggle -->
+  <label class="tt" aria-label="Toggle theme">
+    <input id="themeCheckbox" type="checkbox" aria-label="Theme switch" />
+    <div class="tt-wrapper">
+      <div class="tt-mark"></div>
+      <div class="tt-nebula"></div>
+      <div class="tt-sparkles"></div>
+    </div>
+  </label>
+
+  <main class="page">
+    <div class="container hero no-select wrap">
+      <div class="logo" aria-hidden="true">🚧</div>
+      <h1>Website Under Construction</h1>
+      <p class="lead">We’re building something amazing. Stay tuned.</p>
+
+      <section class="construction" aria-label="Minimal construction animation">
+        <svg class="construction-svg" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Minimal crane">
+          <g class="crane">
+            <line x1="40"  y1="260" x2="560" y2="260" class="base" />
+            <line x1="120" y1="260" x2="120" y2="40"  class="mast" />
+            <line x1="120" y1="40"  x2="360" y2="40"  class="boom" />
+            <circle cx="120" cy="40" r="5" class="accent" />
+            <line x1="300" y1="40" x2="300" y2="178" class="cable" />
+            <g class="rig">
+              <rect x="296" y="172" width="8" height="12" class="hook-stem accent-fill" rx="2" />
+              <circle cx="300" cy="190" r="6" class="accent-fill" />
+              <rect x="298" y="196" width="4" height="6" class="strap accent-fill" rx="2" />
+              <g class="panel">
+                <rect x="260" y="198" width="80" height="26" rx="6" class="panel-rect" />
+                <rect x="270" y="206" width="60" height="4" rx="2" class="panel-line" />
+                <rect x="270" y="214" width="36" height="4" rx="2" class="panel-line" />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="brandline">
+        <span>© <span id="year-footer"></span></span>
+        <strong>Konstantin®</strong>
+        <span>All rights reserved.</span>
+      </div>
+      <nav class="footlinks" aria-label="Footer">
+        <!-- natif -->
+        <a href="./index.html">Home</a>
+        <a href="../legal/legal.html">Legal Notice</a>
+        <a href="../privacy/privacy.html">Privacy</a>
+        <a href="mailto:general@konstantin.cx">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script/script.js"></script>
+  <script>
+    (function(){
+      const cb = document.getElementById('themeCheckbox');
+      if (cb) cb.checked = document.body.classList.contains('light');
+      const yf = document.getElementById('year-footer');
+      if (yf) yf.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy — Konstantin®</title>
+
+  <!-- Font & icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <link rel="icon" type="image/svg+xml" href="../icon/favicon.svg" />
+  <link rel="mask-icon" href="../icon/favicon.svg" color="#4a90e2" />
+
+  <!-- OS UI colors -->
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#4a90e2" media="(prefers-color-scheme: light)" />
+
+  <!-- global + page css -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./privacy.css" />
+  <!-- page css -->
+  <link rel="stylesheet" href="./privacy.css" />
+</head>
+<body class="has-fixed-footer">
+
+  <!-- Theme toggle -->
+  <label class="tt" aria-label="Toggle theme">
+    <input id="themeCheckbox" type="checkbox" aria-label="Theme switch" />
+    <div class="tt-wrapper">
+      <div class="tt-mark"></div>
+      <div class="tt-nebula"></div>
+      <div class="tt-sparkles"></div>
+    </div>
+  </label>
+
+  <main class="page">
+    <div class="container wrap privacy-hero">
+      <div class="logo" aria-hidden="true">🔒</div>
+      <h1>Privacy Policy</h1>
+      <p class="lead">We keep things simple: minimal data, clear choices, and no non‑essential cookies without your say‑so.</p>
+
+      <div class="privacy-grid">
+        <!-- Cookie Controls / What loads -->
+        <section class="card" aria-labelledby="cookies">
+          <h2 id="cookies">Cookie Controls</h2>
+          <p class="meta">Toggle what this site is allowed to load on your device. We only use essentials by default. Your choice is saved in your browser.</p>
+
+          <div class="cookie-box" role="group" aria-label="Cookie preferences">
+            <div class="cookie-row">
+              <div>
+                <strong>Essential</strong> <span class="cookie-tag">required</span>
+                <p>Basic features that keep the site working — e.g., your <em>theme</em> preference and this consent itself. No tracking.</p>
+              </div>
+              <label class="switch" title="Essential cookies are always on">
+                <input type="checkbox" checked disabled aria-disabled="true" />
+                <span class="slider" aria-hidden="true"></span>
+              </label>
+            </div>
+
+            <div class="cookie-row">
+              <div>
+                <strong>Analytics</strong>
+                <p>Anonymous usage stats to understand what pages are visited. We only load analytics if you enable it.</p>
+              </div>
+              <label class="switch">
+                <input id="consent-analytics" type="checkbox" />
+                <span class="slider" aria-hidden="true"></span>
+              </label>
+            </div>
+
+            <div class="cookie-row">
+              <div>
+                <strong>Embedded media</strong>
+                <p>Content from third parties (e.g., maps, video). May set their own cookies when you view them.</p>
+              </div>
+              <label class="switch">
+                <input id="consent-embeds" type="checkbox" />
+                <span class="slider" aria-hidden="true"></span>
+              </label>
+            </div>
+
+            <div class="cookie-actions">
+              <button class="btn" id="btn-decline">Decline non‑essential</button>
+              <button class="btn primary" id="btn-accept">Allow selected</button>
+              <button class="btn" id="btn-reset" title="Clear your saved choices">Reset choices</button>
+            </div>
+
+            <details class="card">
+              <summary><strong>What exactly do we store?</strong></summary>
+              <ul>
+                <li><code>privacy_consent</code> (essential): remembers your toggles. Stored in <em>localStorage</em>.</li>
+                <li><code>theme</code> (essential): remembers light/dark mode. Stored in <em>localStorage</em>.</li>
+                <li><code>_analytics*</code> (analytics, optional): set only if enabled; used to count visits. No personalized ads.</li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+        <!-- Our data practices (concise; no repeats from Legal) -->
+        <section class="card" aria-labelledby="policy">
+          <h2 id="policy">How we handle your data</h2>
+          <ul>
+            <li><strong>No tracking by default:</strong> We don’t load analytics or third‑party embeds until you opt‑in above.</li>
+            <li><strong>Contacting us:</strong> If you email us, we’ll process your message and address to reply and keep a record, then delete or archive it according to our retention rules.</li>
+            <li><strong>Error logs:</strong> Our server may store short‑lived technical logs (IP, user‑agent, URL) to keep the site secure and fix issues.</li>
+            <li><strong>Minimal identifiers:</strong> We avoid storing personal identifiers unless you provide them (e.g., in a contact email).</li>
+          </ul>
+          <p class="meta">For publisher/hosting details, trademarks, and liability, see the <a href="../legal/legal.html">Legal Notice</a>.</p>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="rights">
+          <h2 id="rights">Your choices &amp; rights</h2>
+          <ul>
+            <li><strong>Consent:</strong> You can change cookie choices anytime in the box above.</li>
+            <li><strong>Access &amp; portability:</strong> Ask for a copy of your personal data we process about you.</li>
+            <li><strong>Rectification &amp; erasure:</strong> Ask us to correct or delete your data where applicable.</li>
+            <li><strong>Restriction &amp; objection:</strong> You may object to certain processing or request restriction.</li>
+          </ul>
+          <p>To exercise these rights, email <a href="mailto:legal@konstantin.cx"><code>legal@konstantin.cx</code></a>. If you’re in the EEA/UK, you can also complain to your local data protection authority.</p>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="retention">
+          <h2 id="retention">Retention</h2>
+          <p>We keep technical logs for a short period (typically up to 30 days) unless needed to investigate security incidents. Contact emails and business correspondence are kept as long as needed to respond and comply with legal obligations.</p>
+        </section>
+
+        <section class="card card--wide" aria-labelledby="updates">
+          <h2 id="updates">Updates</h2>
+          <p class="meta">We’ll adjust this page when we change how we handle data. <em>Last updated: <span id="last-updated"></span></em></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="brandline">
+        <span>© <span id="year-footer"></span></span>
+        <strong>Konstantin®</strong>
+        <span>All rights reserved.</span>
+      </div>
+      <nav class="footlinks" aria-label="Footer">
+        <a href="../index/index.html">Home</a>
+        <a href="../legal/legal.html">Legal Notice</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="../contact/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script/script.js"></script>
+  <script src="../script/script.js"></script>
+  <script src="./privacy-script.js"></script>
+</body>
+</html>

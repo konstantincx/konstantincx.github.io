@@ -1,0 +1,36 @@
+
+.wrap { max-width: 860px; width: 100%; margin: 0 auto; text-align: center; }
+.page h1 { margin-bottom: .35rem; letter-spacing: -0.01em; font-weight: 600; }
+.page .lead { color: var(--muted); margin-bottom: 12px; line-height: 1.65; }
+
+
+:root{
+  --construct-line: rgba(255,255,255,0.38);
+  --construct-shadow: rgba(0,0,0,0.28);
+  --construct-max: 900px;         
+  --construct-vw: 96vw;
+}
+body.light{
+  --construct-line: rgba(0,0,0,0.42);
+  --construct-shadow: rgba(0,0,0,0.18);
+}
+
+.construction{
+  display:flex;
+  justify-content:center;        
+  margin-top:40px;
+  transform: scale(1.35);
+  transform-origin:center top;
+}
+
+.construction-svg{display:block;width:min(var(--construct-max),var(--construct-vw));height:auto;filter:drop-shadow(0 6px 16px var(--construct-shadow))}
+.crane .base,.crane .boom,.crane .cable{stroke:var(--construct-line);stroke-width:2.4;fill:none}
+.crane .mast{stroke:var(--construct-line);stroke-width:3.2;fill:none}
+.panel-rect{stroke:var(--construct-line);stroke-width:2.2;fill:none}
+.panel-line{fill:var(--construct-line)}
+.accent{stroke:var(--accent);fill:var(--accent)}
+.accent-fill{fill:var(--accent)}
+.strap{fill:var(--accent)}
+.rig{transform-origin:300px 178px;animation:bob 3.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media (prefers-reduced-motion:reduce){.rig{animation:none}}

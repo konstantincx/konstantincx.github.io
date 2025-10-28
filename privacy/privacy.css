@@ -1,0 +1,228 @@
+/* Privacy page — match index/legal theme */
+
+/* Layout & typography */
+.wrap {
+  max-width: 860px;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.page h1 {
+  margin-bottom: .35rem;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.page .lead {
+  color: var(--muted);
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+
+/* Grid like legal */
+.privacy-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+/* Cards (copy the legal vibe) */
+.card {
+  border: 1px solid color-mix(in oklab, var(--text) 26%, transparent);
+  border-radius: 14px;
+  padding: 16px 16px;
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+  text-align: left;
+}
+
+.card h2 {
+  font-size: 1.07rem;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.card p,
+.card ul,
+.card li,
+.meta {
+  line-height: 1.65;
+}
+
+.card ul {
+  padding-left: 1.1rem;
+}
+
+.meta {
+  margin-top: 14px;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+/* Code token (same as legal) */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: .92em;
+  padding: .06rem .35rem;
+  border: 1px solid color-mix(in oklab, var(--text) 20%, transparent);
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+}
+
+/* Remove code box look when <code> is inside a link (emails) */
+.card a code {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Animated underline like legal — now also inside cards */
+.card a,
+.card a code {
+  color: var(--accent);
+  text-decoration: none;
+  text-decoration-skip-ink: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  transition: color .2s ease, background-size .2s ease;
+}
+
+body:not(.light) .card a:hover,
+body:not(.light) .card a:hover code {
+  color: color-mix(in oklab, var(--accent) 70%, black 30%);
+}
+
+body.light .card a:hover,
+body.light .card a:hover code {
+  color: color-mix(in oklab, var(--accent) 80%, #111 20%);
+}
+
+/* Cookie preferences components */
+.cookie-box {
+  display: grid;
+  gap: .75rem;
+}
+
+.cookie-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem;
+  border: 1px dashed color-mix(in oklab, var(--text) 20%, transparent);
+  border-radius: 12px;
+}
+
+.cookie-row p {
+  margin: 0;
+  font-size: .95rem;
+}
+
+.cookie-tag {
+  font: inherit;
+  font-size: .75rem;
+  opacity: .8;
+  padding: .15rem .5rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+/* Toggle switch (accessible) */
+.switch {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  display: inline-block;
+}
+
+.switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: color-mix(in oklab, var(--text) 16%, transparent);
+  border-radius: 999px;
+  transition: .2s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background: color-mix(in oklab, var(--bg) 5%, white 95%);
+  border-radius: 999px;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background: var(--accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+input:disabled + .slider {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.cookie-actions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid color-mix(in oklab, var(--text) 18%, transparent);
+  background: transparent;
+  color: inherit;
+  padding: .6rem .9rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Responsive layout like legal */
+@media (min-width: 880px) {
+  .privacy-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Fixed footer spacing compatibility */
+.has-fixed-footer {
+  padding-bottom: 68px;
+}
