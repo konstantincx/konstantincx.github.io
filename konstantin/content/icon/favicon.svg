@@ -1,7 +1,0 @@
-<!--?xml version="1.0" encoding="UTF-8"?-->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Background rounded square -->
-  <rect width="64" height="64" rx="14" fill="#4a90e2"></rect>
-  <!-- Rune Kaunan ᚲ (for "K") -->
-  <text x="50%" y="54%" text-anchor="middle" font-size="42" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, Arial, sans-serif">ᚲ</text>
-</svg>
